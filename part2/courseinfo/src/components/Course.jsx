@@ -12,28 +12,24 @@ const Content = ({ parts }) => {
     return (
         <>
             {parts.map((part, index) => 
-            <Part 
-                key={index} 
-                name={part.name} 
-                exercises={part.exercises} 
-            />
+                <Part 
+                    key={index} 
+                    name={part.name} 
+                    exercises={part.exercises} 
+                />
             )}
         </>
     )
 }
 
-const Header = ({ name }) => {
-    return (
-        <h1>{name}</h1>
-    )
-}
+const Header = ({ name }) => <h1>{name}</h1>
 
 const Course = ({ course }) => {
     return (
         <div>
-        <Header name={course.name} />
-        <Content parts={course.parts} />
-        <Total parts={course.parts} />
+            <Header name={course.name} />
+            <Content parts={course.parts} />
+            <Total parts={course.parts} />
         </div>
     )
 }
